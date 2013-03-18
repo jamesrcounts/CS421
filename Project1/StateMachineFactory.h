@@ -11,6 +11,8 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 /// <summary>
 /// Generates deterministic finite automata which accept any document containing a single string.
 /// </summary>
@@ -39,15 +41,15 @@ public:
     {
         vector<TransitionRule> rules;
 
-        for ( int i = 0; i < inputs.size(); i++ )
+        for ( int i = 0; i < ( int )inputs.size(); i++ )
         {
             TransitionRule acceptRule;
             acceptRule.InitialState = i;
             acceptRule.Input = inputs[i];
-            acceptRule.ResultState = i + 1 == inputs.size() ? i : i + 1;
+            acceptRule.ResultState = i + 1 == ( int )inputs.size() ? i : i + 1;
             rules.push_back( acceptRule );
 
-            if ( i + 1 != inputs.size() )
+            if ( i + 1 != ( int )inputs.size() )
             {
                 // Implement default rule - return to state 0.
                 TransitionRule rejectRule;

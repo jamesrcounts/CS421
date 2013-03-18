@@ -23,4 +23,19 @@ check: format
 clean:
 	rm -f project1 *.orig *.gch
 
+IFiniteStateMachine.gch: IFiniteStateMachine.h
+	$(CC) -c IFiniteStateMachine.h $(CFLAGS)
+
+Machine.gch: Machine.h
+	$(CC) -c Machine.h $(CFLAGS)
+
+StateMachineFactory.gch: StateMachineFactory.h TransitionRule.h
+	$(CC) -c StateMachineFactory.h $(CFLAGS)
+
+TransitionRule.gch: TransitionRule.h
+	$(CC) -c TransitionRule.h $(CFLAGS)
+
+Union.gch: Union.h
+	$(CC) -c Union.h $(CFLAGS)
+
 # DO NOT DELETE

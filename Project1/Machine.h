@@ -1,4 +1,4 @@
-e//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 // <copyright file="Machine.cs" company="Jim Counts and Michael Nguyen">
 //     Copyright (c) Jim Counts and Michael Nguyen 2011. All rights reserved.
 // </copyright>
@@ -77,7 +77,7 @@ public:
     /// <param name="document">The document.</param>
     virtual void ReadAllInput( string document )
     {
-        for ( int i = 0; i < document.size(); i++ )
+        for ( int i = 0; i < ( int )document.size(); i++ )
         {
             char input = document[i];
             ReadInput( input );
@@ -90,7 +90,7 @@ public:
     /// <param name="input">The input.</param>
     virtual void ReadInput( char input )
     {
-        for ( int i = 0; i < TransitionRules.size(); i++ )
+        for ( int i = 0; i < ( int )TransitionRules.size(); i++ )
         {
             if ( TransitionRules[i].InitialState == currentState )
             {
@@ -121,7 +121,7 @@ public:
         string format;
         format.append( "States = { " );
 
-        for ( int i = 0; i < TransitionRules.size(); i += 2 )
+        for ( int i = 0; i < ( int )TransitionRules.size(); i += 2 )
         {
             stringstream tstate;
             tstate << TransitionRules[i].InitialState;
@@ -139,7 +139,7 @@ public:
 
         format.append( "\nFinalStates = {" );
 
-        for ( int i = 0; i < FinalStates.size(); i++ )
+        for ( int i = 0; i < ( int )FinalStates.size(); i++ )
         {
             format.append( " " );
             stringstream sstate;
@@ -153,7 +153,7 @@ public:
 
         format.append( "[Rules]\n" );
 
-        for ( int i = 0; i < TransitionRules.size(); i++ )
+        for ( int i = 0; i < ( int )TransitionRules.size(); i++ )
         {
             format.append( TransitionRules[i].ToString() );
             format.append( "\n" );

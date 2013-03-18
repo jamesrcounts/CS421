@@ -33,9 +33,8 @@ public:
     /// <param name="firstMachine">The first machine.</param>
     /// <param name="secondMachine">The second machine.</param>
     Union( Machine firstMachine, Machine secondMachine )
+        : M1( firstMachine ), M2( secondMachine )
     {
-        M1 = firstMachine;
-        M2 = secondMachine;
     }
 
     /// <summary>
@@ -71,7 +70,7 @@ public:
     /// <param name="document">The document.</param>
     virtual void ReadAllInput( string document )
     {
-        for ( int i = 0; i < document.size(); i++ )
+        for ( int i = 0; i < ( int )document.size(); i++ )
         {
             char input = document[i];
             ReadInput( input );

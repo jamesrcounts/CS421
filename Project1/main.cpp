@@ -66,7 +66,7 @@ string Slurp( string file )
     string punctuation = "'[](){}:,-_.!?\";\\/@#$%^&*+|~`<>";
     string result;
 
-    for ( int i = 0; i < allText.size(); i++ )
+    for ( int i = 0; i < ( int )allText.size(); i++ )
     {
         char p = allText[i];
 
@@ -99,7 +99,7 @@ int main( int argc, char *argv[] )
 {
     vector<string> files = GetFiles( "./TestFiles" );
 
-    for ( int i = 0; i < files.size(); i++ )
+    for ( int i = 0; i < ( int )files.size(); i++ )
     {
         string readAllText = Slurp( files[i] );
         Union unionMachine = CreateUnionMachine();

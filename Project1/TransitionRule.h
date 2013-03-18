@@ -9,6 +9,8 @@
 #include <string>
 #include <sstream>
 
+using namespace std;
+
 /// <summary>
 /// Describes one part of a transition function.
 /// </summary>
@@ -108,21 +110,6 @@ struct TransitionRule
         return Input == other.Input &&
                ResultState == other.ResultState &&
                InitialState == other.InitialState;
-    }
-
-    /// <summary>
-    /// Returns a hash code for this instance.
-    /// </summary>
-    /// <returns>
-    /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
-    /// </returns>
-    int GetHashCode()
-    {
-        int hash = 13;
-        hash = ( hash * 7 ) + InitialState;
-        hash = ( hash * 7 ) + ( int )Input;
-        hash = ( hash * 7 ) + ResultState;
-        return hash;
     }
 };
 #endif
